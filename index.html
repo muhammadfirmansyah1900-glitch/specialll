@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Pesan kecil buat kamu</title>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#fff3ee;--ink:#3b2a2f;--card:#fffdfb;--ol:#3b2a2f;--pink:#ff9fb5;--soft:#ffd6e0;--lav:#e4d9fb;--butter:#ffe48a;--mint:#cdeed8;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#2a1d27;--ink:#fbeee9;--card:#3a2a36;--ol:#ffb3c6;--soft:#5a3445;--lav:#4a3d6b;--butter:#6b5a2a;--mint:#2f5040}}
+:root[data-theme="dark"]{--bg:#2a1d27;--ink:#fbeee9;--card:#3a2a36;--ol:#ffb3c6;--soft:#5a3445;--lav:#4a3d6b;--butter:#6b5a2a;--mint:#2f5040}
+*{box-sizing:border-box}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.65 Nunito,system-ui,sans-serif}
+h1,h2,h3{font-family:Fredoka,Nunito,system-ui,sans-serif;font-weight:600;line-height:1.2;margin:0}
+svg{max-width:100%;height:auto}
+.cow{height:30px;background:
+radial-gradient(ellipse 24px 11px at 18px 9px,#3b2a2f 97%,transparent),
+radial-gradient(ellipse 16px 12px at 78px 20px,#3b2a2f 97%,transparent),
+radial-gradient(ellipse 20px 9px at 130px 8px,#3b2a2f 97%,transparent);
+background-color:#fff;background-size:160px 30px;border-bottom:3px solid #3b2a2f}
+.cow.b{border-bottom:0;border-top:3px solid #3b2a2f}
+main{max-width:720px;margin:0 auto;padding:0 20px}
+section{padding:44px 0 8px}
+.hero{text-align:center;padding-top:36px}
+.hero svg{width:min(210px,56vw);animation:wob 1.2s ease-out 1}
+@keyframes wob{0%{transform:rotate(-8deg) scale(.8)}50%{transform:rotate(6deg) scale(1.05)}100%{transform:none}}
+.hero h1{font-size:clamp(2rem,8vw,3rem);margin:14px 0 10px}
+.hero p{max-width:30ch;margin:0 auto;font-size:1.1rem}
+.card{background:var(--card);border:3px solid var(--ol);border-radius:22px;box-shadow:5px 5px 0 var(--ol);padding:22px}
+.letter{display:grid;grid-template-columns:minmax(0,1fr) 120px;gap:14px;align-items:end;background:var(--lav)}
+.letter h2{font-size:1.5rem;margin-bottom:8px}
+.letter p{margin:0 0 10px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:20px;margin-top:18px}
+.grid .card:nth-child(1){background:var(--soft);transform:rotate(-1.2deg)}
+.grid .card:nth-child(2){background:var(--butter);transform:rotate(1deg)}
+.grid .card:nth-child(3){background:var(--mint);transform:rotate(.8deg)}
+.grid .card:nth-child(4){background:var(--lav);transform:rotate(-1deg)}
+.grid h3{font-size:1.2rem;margin-bottom:4px}
+.grid p{margin:0;font-size:.98rem}
+h2.t{font-size:1.7rem;text-align:center}
+.boba{display:grid;grid-template-columns:96px minmax(0,1fr);gap:18px;align-items:center;background:var(--soft)}
+.boba ul{margin:8px 0 0;padding-left:1.2em}
+.boba li{margin-bottom:4px}
+.end{text-align:center;padding-bottom:36px}
+.end svg{width:min(230px,62vw);cursor:pointer;-webkit-tap-highlight-color:transparent}
+.end p{max-width:32ch;margin:8px auto}
+.sign{font-family:Fredoka,sans-serif;font-size:1.2rem}
+.hint{font-size:.85rem;opacity:.75}
+.h{position:fixed;pointer-events:none;font-size:22px;animation:up 1.4s ease-out forwards;z-index:9}
+@keyframes up{to{transform:translateY(-140px) rotate(14deg);opacity:0}}
+#bar{display:none;position:fixed;left:0;right:0;bottom:0;padding:10px 14px calc(10px + env(safe-area-inset-bottom,0px));background:var(--card);border-top:3px solid var(--ol);gap:8px;justify-content:center;flex-wrap:wrap;z-index:20}
+body.ed #bar,body.ed.x #bar{display:flex}
+#bar button{font:600 .95rem Nunito,sans-serif;padding:8px 14px;border-radius:14px;border:2.5px solid var(--ol);background:var(--butter);color:var(--ink);cursor:pointer}
+#bar span{flex-basis:100%;text-align:center;font-size:.82rem}
+body.on [data-k]{outline:2px dashed var(--pink);outline-offset:3px;border-radius:6px;cursor:text}
+body.ed{padding-bottom:110px}
+button:focus-visible,[data-k]:focus-visible{outline:3px solid var(--ol);outline-offset:3px}
+.tag{display:inline-block;margin-top:8px;padding:2px 14px;border:2.5px solid var(--ol);border-radius:999px;background:var(--butter);font:600 .9rem Fredoka,sans-serif}
+.pal{text-align:center}.pal svg{display:block;margin:0 auto}.letter .pal{justify-self:end;width:120px}
+.pop,.hero svg.pop{animation:wob .7s}
+.rv{cursor:pointer}.rv .more{display:none;margin:10px 0 0;padding-top:8px;border-top:2px dashed var(--ol);font-weight:700}.rv.o .more,body.on .rv .more{display:block}
+.tap{font-size:.85rem;opacity:.75;text-align:center;margin:6px 0 0}
+.env{width:min(300px,86vw);margin:14px auto 0;cursor:pointer}.env svg{width:100%}
+.env .lt{background:var(--card);border:3px solid var(--ol);border-radius:16px;text-align:left;max-height:0;overflow:hidden;opacity:0;padding:0 16px;margin-bottom:0;transition:all .6s}
+.env.o .lt,body.on .env .lt{max-height:480px;opacity:1;padding:16px;margin-bottom:12px}
+.env .fo{display:none}.env.o .fo{display:block}.env.o .fc{display:none}
+#toast{position:fixed;left:50%;bottom:calc(24px + env(safe-area-inset-bottom,0px));transform:translate(-50%,30px);max-width:min(88vw,360px);background:var(--card);border:3px solid var(--ol);border-radius:18px;box-shadow:4px 4px 0 var(--ol);padding:12px 16px;text-align:center;font-weight:700;opacity:0;pointer-events:none;transition:all .35s;z-index:30}
+#toast.s{opacity:1;transform:translate(-50%,0)}body.ed #toast{bottom:150px}
+#mu{position:fixed;top:calc(10px + env(safe-area-inset-top,0px));right:12px;z-index:25;font:700 .9rem Nunito,sans-serif;padding:8px 14px;border-radius:999px;border:2.5px solid var(--ol);background:var(--butter);color:var(--ink);cursor:pointer;box-shadow:3px 3px 0 var(--ol)}
+@media (max-width:480px){.letter{grid-template-columns:1fr}.letter svg{justify-self:end;width:100px}.boba{grid-template-columns:76px minmax(0,1fr)}}
+@media (prefers-reduced-motion:reduce){.hero svg{animation:none}.h{animation-duration:.01s}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<g id="f" stroke="#3b2a2f" stroke-width="2"><ellipse cx="0" cy="-10" rx="7" ry="9"/><ellipse cx="0" cy="-10" rx="7" ry="9" transform="rotate(72)"/><ellipse cx="0" cy="-10" rx="7" ry="9" transform="rotate(144)"/><ellipse cx="0" cy="-10" rx="7" ry="9" transform="rotate(216)"/><ellipse cx="0" cy="-10" rx="7" ry="9" transform="rotate(288)"/><circle r="5" fill="#ffe48a"/></g>
+</defs></svg>
+
+<div class="cow" aria-hidden="true"></div>
+<main>
+
+<section class="hero">
+<svg viewBox="0 0 120 120" role="img" aria-label="Sapi lucu bermahkota, ketuk untuk bisikan" id="cow" stroke="#3b2a2f" stroke-width="3" stroke-linejoin="round">
+<ellipse cx="20" cy="46" rx="14" ry="9" fill="#fff" transform="rotate(-25 20 46)"/><ellipse cx="100" cy="46" rx="14" ry="9" fill="#fff" transform="rotate(25 100 46)"/>
+<ellipse cx="20" cy="46" rx="7" ry="4" fill="#ffc2d1" stroke="none" transform="rotate(-25 20 46)"/><ellipse cx="100" cy="46" rx="7" ry="4" fill="#ffc2d1" stroke="none" transform="rotate(25 100 46)"/>
+<ellipse cx="38" cy="18" rx="6" ry="10" fill="#ffe48a" transform="rotate(-18 38 18)"/><ellipse cx="82" cy="18" rx="6" ry="10" fill="#ffe48a" transform="rotate(18 82 18)"/>
+<ellipse cx="60" cy="58" rx="42" ry="38" fill="#fff"/>
+<ellipse cx="38" cy="36" rx="13" ry="10" fill="#3b2a2f" stroke="none"/><ellipse cx="92" cy="64" rx="7" ry="13" fill="#3b2a2f" stroke="none"/>
+<ellipse cx="60" cy="82" rx="25" ry="16" fill="#ffc2d1"/>
+<ellipse cx="52" cy="82" rx="3" ry="4.5" fill="#3b2a2f" stroke="none"/><ellipse cx="68" cy="82" rx="3" ry="4.5" fill="#3b2a2f" stroke="none"/>
+<circle cx="45" cy="56" r="5.5" fill="#3b2a2f" stroke="none"/><circle cx="75" cy="56" r="5.5" fill="#3b2a2f" stroke="none"/>
+<circle cx="47" cy="54" r="1.8" fill="#fff" stroke="none"/><circle cx="77" cy="54" r="1.8" fill="#fff" stroke="none"/>
+<circle cx="33" cy="70" r="5" fill="#ff9fb5" stroke="none" opacity=".7"/><circle cx="87" cy="72" r="5" fill="#ff9fb5" stroke="none" opacity=".7"/>
+<path d="M52 92q8 6 16 0" fill="none"/>
+<path d="M44 26L47 8L55 18L60 3L65 18L73 8L76 26Z" fill="#ffe48a"/><circle cx="60" cy="20" r="3" fill="#ff4f7b" stroke-width="2"/><circle cx="47" cy="8" r="2.5" fill="#ff9fb5" stroke-width="2"/><circle cx="73" cy="8" r="2.5" fill="#ff9fb5" stroke-width="2"/>
+</svg>
+<div class="tag" data-k="n_cow">Bombom</div>
+<h1 data-k="judul">Muuu~ cantiknya kamu bikin aku jatuh cinta lagi</h1>
+<p>Halo <span data-k="nama">Princess</span> cantikku, ada pesan kecil yang aku siapin cuma buat kamu.</p>
+<p class="hint" style="margin-top:10px" data-k="gulir">Colek sapinya, dia suka bisikin sesuatu. Nyalakan musik di pojok kanan atas.</p>
+</section>
+
+<section>
+<div class="card letter">
+<div>
+<h2 data-k="j1">Princess, dengerin ini ya</h2>
+<p data-k="p1">Sejak ada kamu, hal-hal biasa jadi terasa istimewa. Kopi pagi, chat receh, sampai diam bareng pun rasanya hangat.</p>
+<p data-k="p2">Kalau ditanya apa hal terbaik yang pernah terjadi di hidupku, jawabannya selalu kamu.</p>
+</div>
+<div class="pal"><svg viewBox="0 0 120 130" role="img" aria-label="Burung hantu lucu, ketuk untuk bisikan" id="owl" stroke="#3b2a2f" stroke-width="3" stroke-linejoin="round">
+<path d="M22 40L18 12L46 28Z M98 40L102 12L74 28Z" fill="#b9a4ea"/>
+<ellipse cx="60" cy="78" rx="42" ry="46" fill="#b9a4ea"/>
+<ellipse cx="60" cy="92" rx="27" ry="30" fill="#f5efff" stroke="none"/>
+<ellipse cx="18" cy="84" rx="9" ry="22" fill="#a48fe0" transform="rotate(10 18 84)"/><ellipse cx="102" cy="84" rx="9" ry="22" fill="#a48fe0" transform="rotate(-10 102 84)"/>
+<circle cx="43" cy="60" r="17" fill="#fff"/><circle cx="77" cy="60" r="17" fill="#fff"/>
+<circle cx="45" cy="61" r="8.5" fill="#3b2a2f" stroke="none"/><circle cx="75" cy="61" r="8.5" fill="#3b2a2f" stroke="none"/>
+<circle cx="48" cy="58" r="3" fill="#fff" stroke="none"/><circle cx="78" cy="58" r="3" fill="#fff" stroke="none"/>
+<path d="M54 74h12l-6 10Z" fill="#ffb347"/>
+<path d="M60 108c-9-6-12-10-9-14 3-3 7-1 9 2 2-3 6-5 9-2 3 4 0 8-9 14Z" fill="#ff9fb5" stroke-width="2"/>
+<path d="M46 126h8m12 0h8" stroke="#ffb347" stroke-linecap="round"/>
+<circle cx="30" cy="74" r="4.5" fill="#ff9fb5" stroke="none" opacity=".7"/><circle cx="90" cy="74" r="4.5" fill="#ff9fb5" stroke="none" opacity=".7"/>
+</svg><div class="tag" data-k="n_owl">Tutuy</div></div>
+</div>
+</section>
+
+<section>
+<h2 class="t" data-k="j2">Alasan aku susah move on dari kamu</h2>
+<p class="tap">Ketuk kartunya, ada bisikan rahasia</p>
+<div class="grid">
+<div class="card rv"><h3 data-k="a1">Cantikmu bukan cuma di wajah</h3><p data-k="a1b">Tapi di caramu memperlakukan orang, caramu tertawa, dan caramu bikin aku merasa pulang.</p><p class="more" data-k="a1c">Dan iya, hari ini aku jatuh cinta sama kamu lagi.</p></div>
+<div class="card rv"><h3 data-k="a2">Kamu itu rumahku</h3><p data-k="a2b">Di dunia yang berisik, cuma kamu tempat yang bikin hatiku tenang.</p><p class="more" data-k="a2c">Kalau capek, aku selalu pengin pulangnya ke kamu.</p></div>
+<div class="card rv"><h3 data-k="a3">Senyummu bahaya</h3><p data-k="a3b">Sekali lihat, aku lupa semua masalah dan malah senyum-senyum sendiri.</p><p class="more" data-k="a3c">Tolong tanggung jawab, aku jadi sering salting.</p></div>
+<div class="card rv"><h3 data-k="a4">Kamu hadiah terbaikku</h3><p data-k="a4b">Dari semua yang pernah kuminta ke semesta, kamu yang paling pas.</p><p class="more" data-k="a4c">Aku bersyukur banget punya kamu, Princess.</p></div>
+</div>
+</section>
+
+<section>
+<div class="card boba">
+<div class="pal"><svg viewBox="0 0 100 130" role="img" aria-label="Boneka boba lucu, ketuk untuk kupon" id="boba" stroke="#3b2a2f" stroke-width="3" stroke-linejoin="round">
+<rect x="55" y="4" width="9" height="34" rx="4" fill="#ff7aa2" transform="rotate(12 60 34)"/>
+<path d="M20 38L80 38L72 118Q71 125 64 125L36 125Q29 125 28 118Z" fill="#f2d9bd"/>
+<rect x="15" y="29" width="70" height="13" rx="6.5" fill="#ff9fb5"/>
+<circle cx="38" cy="112" r="5.5" fill="#3b2a2f"/><circle cx="50" cy="115" r="5.5" fill="#3b2a2f"/><circle cx="62" cy="112" r="5.5" fill="#3b2a2f"/><circle cx="44" cy="102" r="5.5" fill="#3b2a2f"/><circle cx="56" cy="103" r="5.5" fill="#3b2a2f"/>
+<circle cx="40" cy="68" r="3.5" fill="#3b2a2f" stroke="none"/><circle cx="62" cy="68" r="3.5" fill="#3b2a2f" stroke="none"/>
+<path d="M46 76q5 5 10 0" fill="none"/>
+<ellipse cx="33" cy="77" rx="5" ry="3.5" fill="#ff9fb5" stroke="none"/><ellipse cx="69" cy="77" rx="5" ry="3.5" fill="#ff9fb5" stroke="none"/>
+</svg><div class="tag" data-k="n_boba">Babol</div></div>
+<div>
+<h2 style="font-size:1.35rem" data-k="j3">Janji dari aku (ketuk bobanya)</h2>
+<ul>
+<li data-k="b1">Dengerin semua ceritamu, sepanjang apa pun itu.</li>
+<li data-k="b2">Jadi bahu buat bersandar tiap kamu lelah.</li>
+<li data-k="b3">Tetap milih kamu, di hari baik maupun buruk.</li>
+</ul>
+</div>
+</div>
+</section>
+
+<section style="text-align:center">
+<svg style="width:110px" viewBox="0 0 110 112" role="img" aria-label="Kambing lucu membawa hati" stroke="#3b2a2f" stroke-width="3" stroke-linejoin="round">
+<path d="M38 24Q28 4 40 1Q42 12 47 22Z" fill="#f2e3b3"/><path d="M72 24Q82 4 70 1Q68 12 63 22Z" fill="#f2e3b3"/><ellipse cx="14" cy="46" rx="15" ry="7" fill="#fff" transform="rotate(22 14 46)"/><ellipse cx="96" cy="46" rx="15" ry="7" fill="#fff" transform="rotate(-22 96 46)"/><ellipse cx="14" cy="46" rx="8" ry="3.5" fill="#ffc2d1" stroke="none" transform="rotate(22 14 46)"/><ellipse cx="96" cy="46" rx="8" ry="3.5" fill="#ffc2d1" stroke="none" transform="rotate(-22 96 46)"/>
+<ellipse cx="55" cy="48" rx="31" ry="33" fill="#fffaf0"/><path d="M47 18Q55 8 63 18Q55 24 47 18Z" fill="#fffaf0"/><ellipse cx="55" cy="62" rx="15" ry="10" fill="#ffd6e0"/><ellipse cx="50" cy="60" rx="2" ry="3" fill="#3b2a2f" stroke="none"/><ellipse cx="60" cy="60" rx="2" ry="3" fill="#3b2a2f" stroke="none"/>
+<circle cx="43" cy="44" r="3.5" fill="#3b2a2f" stroke="none"/><circle cx="67" cy="44" r="3.5" fill="#3b2a2f" stroke="none"/><circle cx="34" cy="56" r="4.5" fill="#ff9fb5" stroke="none" opacity=".7"/><circle cx="76" cy="56" r="4.5" fill="#ff9fb5" stroke="none" opacity=".7"/>
+<path d="M50 65q5 4 10 0" fill="none"/>
+<path d="M55 110c-18-11-26-20-20-28 5-6 14-3 20 5 6-8 15-11 20-5 6 8-2 17-20 28Z" fill="#ff4f7b"/></svg>
+<div class="tag" data-k="n_bear">Ncipp</div>
+<h2 class="t" data-k="j5">Surat rahasia buat Princess</h2>
+<p class="tap">Ketuk amplopnya</p>
+<div class="env" id="env"><div class="lt"><p style="margin:0" data-k="sr">Princess, kalau suatu hari kamu merasa nggak cukup, ingat ya: di mataku kamu selalu lebih dari cukup. Kamu alasan aku pengin jadi versi terbaik diriku. Terima kasih sudah memilih aku.</p></div>
+<svg viewBox="0 0 160 100" role="img" aria-label="Amplop surat cinta" stroke="#3b2a2f" stroke-width="3" stroke-linejoin="round"><rect x="8" y="22" width="144" height="72" rx="8" fill="#ffd6e0"/><path class="fo" d="M8 30L80 4L152 30Z" fill="#ffb3c6"/><path d="M8 94L80 52L152 94" fill="none"/><path class="fc" d="M8 22L80 66L152 22Z" fill="#ffb3c6"/><path class="fc" d="M80 76c-8-5-11-9-8-12 3-3 6-1 8 2 2-3 5-5 8-2 3 3 0 7-8 12Z" fill="#ff4f7b" stroke-width="2"/></svg></div>
+</section>
+
+<section class="end">
+<svg id="bq" viewBox="0 0 140 150" role="img" aria-label="Buket bunga, ketuk untuk hati" stroke="#3b2a2f" stroke-width="3" stroke-linejoin="round">
+<path d="M70 92L40 50M70 92L70 38M70 92L100 50" stroke="#5fb37a" stroke-width="4" fill="none"/>
+<ellipse cx="52" cy="82" rx="14" ry="6" fill="#8fd1a0" transform="rotate(-35 52 82)"/><ellipse cx="90" cy="82" rx="14" ry="6" fill="#8fd1a0" transform="rotate(35 90 82)"/>
+<use href="#f" transform="translate(38 46) scale(1.1)" fill="#ff9fb5"/>
+<use href="#f" transform="translate(70 32) scale(1.3)" fill="#fff"/>
+<use href="#f" transform="translate(102 46) scale(1.1)" fill="#b9a4ea"/>
+<use href="#f" transform="translate(54 66) scale(.9)" fill="#ffd36b"/>
+<use href="#f" transform="translate(88 66) scale(.9)" fill="#ff9fb5"/>
+<path d="M26 74L114 74L80 146L60 146Z" fill="#ffd6e0"/>
+<path d="M44 74L66 146M96 74L74 146" stroke-width="2" fill="none" opacity=".5"/>
+<path d="M70 120l-14-8v16Z M70 120l14-8v16Z" fill="#ff7aa2" stroke-width="2.5"/><circle cx="70" cy="120" r="4" fill="#ff7aa2" stroke-width="2.5"/>
+</svg>
+<p class="hint">Ketuk bunganya ya</p>
+<h2 data-k="j4">Bunga ini buat kamu</h2>
+<p data-k="p3">Kamu bunga paling cantik yang pernah kutemui, dan aku mau terus menjagamu supaya selalu mekar. Aku sayang kamu, Princess, hari ini dan seterusnya.</p>
+<p class="sign">Dengan sepenuh cinta, <span data-k="dari">pacarmu</span></p>
+</section>
+
+</main>
+<div class="cow b" aria-hidden="true"></div>
+
+<button id="mu" aria-pressed="false">🎵 Putar musik</button><div id="toast" role="status"></div>
+<div id="bar">
+<button id="tg">Edit teks</button><button id="rs">Kembalikan awal</button>
+<span>Klik teks bergaris putus-putus lalu ketik. Perubahan tersimpan di perangkat ini saja.</span>
+</div>
+
+<script>
+(function(){
+var K='pesan-pasangan-v3',S={};
+try{S=JSON.parse(localStorage.getItem(K)||'{}')||{}}catch(e){S={}}
+var els=[].slice.call(document.querySelectorAll('[data-k]'));
+els.forEach(function(e){var v=S[e.dataset.k];if(typeof v==='string')e.textContent=v});
+if(location.hash==='#edit')document.body.classList.add('ed');
+var on=false;
+document.getElementById('tg').onclick=function(){
+on=!on;document.body.classList.toggle('on',on);this.textContent=on?'Selesai':'Edit teks';
+els.forEach(function(e){e.contentEditable=on?'true':'false'});
+};
+document.addEventListener('input',function(ev){
+var t=ev.target;if(!t.dataset||!t.dataset.k)return;
+S[t.dataset.k]=t.textContent;
+els.forEach(function(e){if(e!==t&&e.dataset.k===t.dataset.k)e.textContent=t.textContent});
+try{localStorage.setItem(K,JSON.stringify(S))}catch(e){}
+});
+document.getElementById('rs').onclick=function(){
+try{localStorage.removeItem(K)}catch(e){}
+location.reload();
+};
+var tt=document.getElementById('toast'),tm;
+function say(m){tt.textContent=m;tt.classList.add('s');clearTimeout(tm);tm=setTimeout(function(){tt.classList.remove('s')},3600)}
+function nm(k){var e=document.querySelector('[data-k="'+k+'"]');return e?e.textContent:''}
+function pick(a){return a[Math.floor(Math.random()*a.length)]}
+function tap(id,fn){var e=document.getElementById(id);e.addEventListener('click',function(){if(document.body.classList.contains('on'))return;e.classList.remove('pop');void e.offsetWidth;e.classList.add('pop');fn(e)})}
+tap('cow',function(){say(pick(['Muuu~ Princess cantik banget hari ini!',nm('n_cow')+' bilang: kamu paling menawan sepeternakan.','Muuu... aku kangen kamu.']))});
+tap('owl',function(){say(pick(['Hoo hoo~ katanya ada yang cantiknya bikin bulan iri.',nm('n_owl')+' jagain malammu ya, '+nm('nama')+'. Tidur nyenyak.','Hoo, jangan lupa: kamu dicintai banget.']))});
+tap('boba',function(){say(pick(['Kupon: 1x peluk hangat, berlaku selamanya','Kupon: 1x traktir boba tanpa syarat','Kupon: 1x dengerin curhat sampai tuntas','Kupon: 1x kecup di kening',nm('n_boba')+' titip pesan: kamu manisnya pas banget.']))});
+tap('env',function(e){e.classList.toggle('o')});
+[].forEach.call(document.querySelectorAll('.rv'),function(c){c.addEventListener('click',function(){if(!document.body.classList.contains('on'))c.classList.toggle('o')})});
+var ac,dl,pl=false,tmr,st=0,mb=document.getElementById('mu');
+var prog=[[261.63,329.63,392,523.25],[220,261.63,329.63,440],[174.61,220,261.63,349.23],[196,246.94,293.66,392]],pat=[0,1,2,3,2,1,2,3];
+function nt(f,t,d,v){var o=ac.createOscillator(),g=ac.createGain();o.type='sine';o.frequency.value=f;g.gain.setValueAtTime(0,t);g.gain.linearRampToValueAtTime(v,t+.02);g.gain.exponentialRampToValueAtTime(.0001,t+d);o.connect(g);g.connect(dl);o.start(t);o.stop(t+d+.05)}
+function bar(){if(!pl)return;var c=prog[st%4],t=ac.currentTime+.05;st++;nt(c[0]/2,t,2.3,.22);pat.forEach(function(i,n){nt(c[i],t+n*.3,1.4,.16);nt(c[i]*2,t+n*.3,.7,.05)});if(st%4===0)nt(c[3]*1.5,t+1.2,1.8,.07);tmr=setTimeout(bar,2400)}
+mb.onclick=function(){try{if(!ac){ac=new (window.AudioContext||window.webkitAudioContext)();var m=ac.createGain();m.gain.value=.55;m.connect(ac.destination);var d=ac.createDelay();d.delayTime.value=.33;var fb=ac.createGain();fb.gain.value=.4;d.connect(fb);fb.connect(d);d.connect(m);dl=ac.createGain();dl.connect(m);dl.connect(d)}
+if(ac.resume)ac.resume();pl=!pl;mb.textContent=pl?'⏸ Jeda musik':'🎵 Putar musik';mb.setAttribute('aria-pressed',pl);if(pl)bar();else clearTimeout(tmr)}catch(e){say('Musik tidak bisa diputar di browser ini.')}};
+var bq=document.getElementById('bq'),em=['💗','🌸','🐮','🧋','🦉','✨'];
+bq.addEventListener('click',function(ev){
+for(var i=0;i<6;i++){(function(i){
+var h=document.createElement('span');h.className='h';h.textContent=em[Math.floor(Math.random()*em.length)];
+h.style.left=(ev.clientX-12+(Math.random()*80-40))+'px';h.style.top=(ev.clientY-12)+'px';
+document.body.appendChild(h);setTimeout(function(){h.remove()},1500);
+})(i)}
+});
+})();
+</script>
+</body>
+</html>
